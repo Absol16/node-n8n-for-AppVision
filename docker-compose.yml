@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  n8n:
+    image: n8n-appvision
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_HOST=localhost
+      - N8N_PORT=5678
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=admin
+      - N8N_BASIC_AUTH_PASSWORD=admin
+
+    volumes:
+      - appvision_sessions:/usr/local/lib/node_modules/n8n-nodes-appvision/dist/nodes/AppVision/session
+    restart: unless-stopped
+
+volumes:
+  appvision_sessions:
