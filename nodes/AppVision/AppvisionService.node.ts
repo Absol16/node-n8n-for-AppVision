@@ -214,14 +214,6 @@ export class AppvisionService implements INodeType {
                 default: 'start',
             },
             {
-                displayName: 'IP',
-                name: 'ip',
-                type: 'string',
-                default: '',
-                required: true,
-                description: 'L\'adresse IP du service AppVision',
-            },
-            {
                 displayName: 'Lock Status',
                 name: 'isLocked',
                 type: 'boolean',
