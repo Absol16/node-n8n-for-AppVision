@@ -382,7 +382,6 @@ server.tool("get-variables-by-protocol", "Get variables from AppVision client by
 server.tool("get-variables-by-filter", "Get variables from AppVision client by filter", {
     filters: z.string().describe("Comma separated list of filters to apply, for example: $A.Area1,$G.Group1,$V.Variable1"),
 }, async ({ filters }) => {
-    // Récupérer la session et les en-têtes
     const sessionData = await getSessionAndHeaders();
     const sessionId = sessionData?.sessionId;
     const ip = sessionData?.ip;

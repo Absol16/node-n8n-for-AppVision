@@ -625,8 +625,9 @@ export class AppvisionService implements INodeType {
     };
 
     async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
+        const credentials = await this.getCredentials('appVisionCredentials');
+        const ip = credentials?.ip;
         const returnData: INodeExecutionData[] = [];
-        let ip = this.getNodeParameter('ip', 0) as string;
         const operation = this.getNodeParameter('operation', 0) as string;
         const parser = new XMLParser({ ignoreAttributes: false });
 
