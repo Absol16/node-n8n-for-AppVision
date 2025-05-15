@@ -23,6 +23,12 @@ export class AppvisionService implements INodeType {
         },
         inputs: [NodeConnectionType.Main],
         outputs: [NodeConnectionType.Main],
+        credentials: [
+            {
+              name: 'appVisionCredentials',
+              required: true,
+            },
+          ],
         properties: [
             {
                 displayName: 'Resource',
@@ -614,6 +620,7 @@ export class AppvisionService implements INodeType {
             },
 
         ],
+        
     };
 
     async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
